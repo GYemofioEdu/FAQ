@@ -24,6 +24,8 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\User wherePassword($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\User whereRememberToken($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\User whereUpdatedAt($value)
+ * @property-read \App\Profile $profile
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Question[] $questions
  */
 class User extends Authenticatable
 {
@@ -49,5 +51,9 @@ class User extends Authenticatable
 
     public function profile(){
         return $this->hasOne('App\Profile');
+    }
+
+    public function questions(){
+        return $this->hasMany('App\Question');
     }
 }
