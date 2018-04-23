@@ -13,15 +13,18 @@ class QuestionsTableSeeder extends Seeder
     {
         $users = App\User::all();
         $users->each(function ($user) {
-            $this->getAndSaveQuestion($user);
-            $this->getAndSaveQuestion($user);
+            $numQuestionsToCreate = 5;
+            $this->getAndSaveQuestions($user, $numQuestionsToCreate);
         });
     }
 
-    private function getAndSaveQuestion(App\User $user)
+    private function getAndSaveQuestions(App\User $user, $numQuestions)
     {
-        $question = factory(\App\Question::class)->make();
-        $question->user()->associate($user);
-        $question->save();
+        for ( $i = 1; $i <= $numQuestions; $i++ ){
+            $question = factory(\App\Question::class)->make();
+            $question->user()->associate($user);
+            $question->save();
+        }
+
     }
 }
