@@ -13,7 +13,7 @@ class QuestionsTableSeeder extends Seeder
     {
         $users = App\User::all();
         $users->each(function ($user) {
-            $numQuestionsToCreate = 5;
+            $numQuestionsToCreate = 16;
             $this->getAndSaveQuestions($user, $numQuestionsToCreate);
         });
     }
