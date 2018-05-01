@@ -6,10 +6,11 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">Questions
-
+                        <a class="btn btn-primary float-right" href="{{ route('question.create') }}">
+                            Add a Question
+                        </a>
 
                         <div class="card-body">
-
                             <div class="card-deck">
                                 @forelse($questions as $question)
                                     <div class="col-sm-4 d-flex align-items-stretch">
