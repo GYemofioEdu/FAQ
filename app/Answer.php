@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Answer extends Model
 {
+    protected $fillable = ['body'];
+
     // Every Answer belongs to a user
     public function user(){
         return $this->belongsTo('App\User');
