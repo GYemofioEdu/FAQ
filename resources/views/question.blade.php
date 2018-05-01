@@ -13,7 +13,7 @@
                     </div>
                     <div class="card-footer">
                         <a class="btn btn-primary float-right"
-                           href="#">
+                           href="{{ route('question.edit',['id'=> $question->id])}}">
                             Edit Question
                         </a>
                     </div>
