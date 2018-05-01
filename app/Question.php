@@ -22,6 +22,8 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Question extends Model
 {
+    protected $fillable = ['body'];
+
     /* Method to return user for a given Question
         also sets relationship from Question to User
     */
