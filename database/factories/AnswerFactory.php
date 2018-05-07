@@ -11,5 +11,6 @@ use Faker\Generator as Faker;
         return [
             //generate an answer body
             'body' => $faker->paragraph($nbSentences = 3, $variableNbSentences = true),
+            'num_votes'=> 0,
         ];
 });
