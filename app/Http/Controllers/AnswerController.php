@@ -107,6 +107,13 @@ class AnswerController extends Controller
         return redirect()->route('answers.show',['question_id' => $question, 'answer_id' => $answer])->with('message', 'Answer Updated!');
     }
 
+    public function votes_up(Request $request, $question, $answer)
+    {
+        $answer = Answer::find($answer);
+        $answer->num_votes = ($answer->num_votes + 1);
+        $answer->save();
+        return redirect()->route('answers.show',['question_id' => $question, 'answer_id' => $answer])->with('message', 'Answer Voted Up!');
+    }
     /**
      * Remove the specified resource from storage.
      *

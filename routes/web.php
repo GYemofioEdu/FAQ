@@ -30,6 +30,7 @@ Route::get('/questions/{question_id}/answers/create', 'AnswerController@create')
 Route::post('/questions/{question_id}/answers/', 'AnswerController@store')->name('answers.store');
 Route::get('/questions/{question_id}/answers/{answer_id}/edit', 'AnswerController@edit')->name('answers.edit');
 Route::patch('/questions/{question_id}/answer/{answer_id}', 'AnswerController@update')->name('answers.update');
+Route::patch('/questions/{question_id}/answer/{answer_id}/vote_up', 'AnswerController@votes_up')->name('answers.vote_up');
 Route::delete('/questions/{question_id}/answer/{answer_id}', 'AnswerController@destroy')->name('answers.destroy');
 
 Route::resources(['question' => 'QuestionController',]);
